@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="react-router," />
+  <meta name="keywords" content="Hexo, NexT" />
 
 
 
@@ -79,20 +79,17 @@
 
 
 
-<meta name="description" content="背景  最近在倒置react全家桶，自己写了个简单的Hello World程序， 在使用 react-router 的 IndexRoute时，浏览器报错 需求样式 默认主页是 Home，想通过IndexRoute实现 项目相关依赖版本&amp;quot;dependencies&amp;quot;: {   &amp;quot;react&amp;quot;: &amp;quot;^16.5.0&amp;quot;,   &amp;quot;reac">
-<meta name="keywords" content="react-router">
+<meta name="description" content="Action 是行为的抽象 是普通的JS对象   一般由方法生成 必须有一个typeReducer  reducer是一个纯函数，接收旧的state和action，返回新的state Store">
 <meta property="og:type" content="article">
-<meta property="og:title" content="react-routerv4 版本丢弃IndexRoute">
-<meta property="og:url" content="http://yoursite.com/2018/09/10/react-routerv4版本丢弃IndexRoute/index.html">
+<meta property="og:title" content="阿瑜的博客">
+<meta property="og:url" content="http://yoursite.com/2018/09/12/redux基础/index.html">
 <meta property="og:site_name" content="阿瑜的博客">
-<meta property="og:description" content="背景  最近在倒置react全家桶，自己写了个简单的Hello World程序， 在使用 react-router 的 IndexRoute时，浏览器报错 需求样式 默认主页是 Home，想通过IndexRoute实现 项目相关依赖版本&amp;quot;dependencies&amp;quot;: {   &amp;quot;react&amp;quot;: &amp;quot;^16.5.0&amp;quot;,   &amp;quot;reac">
+<meta property="og:description" content="Action 是行为的抽象 是普通的JS对象   一般由方法生成 必须有一个typeReducer  reducer是一个纯函数，接收旧的state和action，返回新的state Store">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://yoursite.com/2018/09/10/react-routerv4版本丢弃IndexRoute/1.png">
-<meta property="og:updated_time" content="2018-09-12T01:03:01.378Z">
+<meta property="og:updated_time" content="2018-09-12T10:13:10.551Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="react-routerv4 版本丢弃IndexRoute">
-<meta name="twitter:description" content="背景  最近在倒置react全家桶，自己写了个简单的Hello World程序， 在使用 react-router 的 IndexRoute时，浏览器报错 需求样式 默认主页是 Home，想通过IndexRoute实现 项目相关依赖版本&amp;quot;dependencies&amp;quot;: {   &amp;quot;react&amp;quot;: &amp;quot;^16.5.0&amp;quot;,   &amp;quot;reac">
-<meta name="twitter:image" content="http://yoursite.com/2018/09/10/react-routerv4版本丢弃IndexRoute/1.png">
+<meta name="twitter:title" content="阿瑜的博客">
+<meta name="twitter:description" content="Action 是行为的抽象 是普通的JS对象   一般由方法生成 必须有一个typeReducer  reducer是一个纯函数，接收旧的state和action，返回新的state Store">
 
 
 
@@ -122,13 +119,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/09/10/react-routerv4版本丢弃IndexRoute/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/09/12/redux基础/"/>
 
 
 
 
 
-  <title>react-routerv4 版本丢弃IndexRoute | 阿瑜的博客</title>
+  <title> | 阿瑜的博客</title>
   
 
 
@@ -255,7 +252,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/10/react-routerv4版本丢弃IndexRoute/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/12/redux基础/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="刘承瑜">
@@ -272,7 +269,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">react-routerv4 版本丢弃IndexRoute</h1>
+          <h1 class="post-title" itemprop="name headline"></h1>
         
 
         <div class="post-meta">
@@ -284,8 +281,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-10T17:04:16+08:00">
-                2018-09-10
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-12T11:30:40+08:00">
+                2018-09-12
               </time>
             
 
@@ -322,86 +319,16 @@
       
 
       
-        <h3 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h3><p>  最近在倒置react全家桶，自己写了个简单的Hello World程序， 在使用 react-router 的 IndexRoute时，浏览器报错</p>
-<h3 id="需求样式"><a href="#需求样式" class="headerlink" title="需求样式"></a>需求样式</h3><p><img src="/2018/09/10/react-routerv4版本丢弃IndexRoute/1.png" alt="logo"></p>
-<p>默认主页是 Home，想通过IndexRoute实现</p>
-<h3 id="项目相关依赖版本"><a href="#项目相关依赖版本" class="headerlink" title="项目相关依赖版本"></a>项目相关依赖版本</h3><pre><code>&quot;dependencies&quot;: {
-  &quot;react&quot;: &quot;^16.5.0&quot;,
-  &quot;react-dom&quot;: &quot;^16.5.0&quot;,
-  &quot;react-redux&quot;: &quot;^5.0.7&quot;,
-  &quot;react-router&quot;: &quot;^4.3.1&quot;,
-  &quot;react-router-dom&quot;: &quot;^4.3.1&quot;,
-  &quot;react-scripts&quot;: &quot;1.1.5&quot;,
-  &quot;redux&quot;: &quot;^4.0.0&quot;
-}
-</code></pre><h3 id="浏览器报错"><a href="#浏览器报错" class="headerlink" title="浏览器报错"></a>浏览器报错</h3><pre><code>./src/routes/index.js
-27:28-38 &apos;react-router-dom&apos; does not contain an export named &apos;IndexRoute&apos;.
-</code></pre><p>   很明显，新版本的react-router已经不支持IndexRoute</p>
-<h3 id="新老方式代码差别"><a href="#新老方式代码差别" class="headerlink" title="新老方式代码差别"></a>新老方式代码差别</h3><p>老方式实现</p>
-<pre><code>import React from &apos;react&apos;;
-import {IndexRoute, Route} from &apos;react-router&apos;;
-import {BrowserRouter} from &apos;react-router-dom&apos;;
-
-import Home from &apos;../pages/Home&apos;;
-import Frame from &apos;../layouts/Frame&apos;;
-import Detail from &apos;../pages/Detail&apos;;
-
-const routes = (
-    &lt;BrowserRouter&gt;
-        &lt;Route path=&quot;/&quot; component={Frame}&gt;
-            &lt;Route exact path=&quot;/&quot; component={Home}/&gt;
-            &lt;Route path=&quot;/detail&quot; component={Detail}&gt;&lt;/Route&gt;      
-        &lt;/Route&gt;
-    &lt;/BrowserRouter&gt;
-);
-
-export default routes;
-</code></pre><p>新方式实现</p>
-<pre><code>import React from &apos;react&apos;;
-import {BrowserRouter, Route} from &apos;react-router-dom&apos;;
-
-import Home from &apos;../pages/Home&apos;;
-import Frame from &apos;../layouts/Frame&apos;;
-import Detail from &apos;../pages/Detail&apos;;
-
-const routes = (
-        &lt;BrowserRouter&gt;
-            &lt;Frame&gt;             
-                &lt;Route path=&quot;/&quot; exact component={Home}/&gt;
-                &lt;Route path=&quot;/detail&quot; component={Detail}&gt;&lt;/Route&gt;         
-            &lt;/Frame&gt;
-        &lt;/BrowserRouter&gt;        
-);
-
-export default routes;
-</code></pre><h3 id="解释"><a href="#解释" class="headerlink" title="解释"></a>解释</h3><blockquote>
-<p>react-router4没有indexRoute了。 react-router4版本中路由的本质变成了React组件，也就是自定义标签。所以你可以像使用组件一样是用路由。那么嵌套路由无非就是组件嵌套的写法（自定义标签嵌套而已）</p>
-</blockquote>
-<p>放到你的App组件里面去，你把Route不要看做路由，就看做div，div里面包含的就是你要显示的内容。那么它应该在哪里，它就放在哪里（有点绕。。。，多读几遍）。<br>最外层就如下写: 所有请求的入口</p>
-<route path="/" component="{App}">
-
-<pre><code>import React, { Component } from &apos;react&apos;;
-import {Route,Switch,NavLink} from &apos;react-router-dom&apos;;
-
-class App extends React.Component {
-    render() {
-        return(
-             &lt;div&gt;
-                 &lt;Header/&gt;
-                  &lt;div&gt;
-                     &lt;Route path=&quot;/&quot; exact component={Home} /&gt;
-                     &lt;Route path=&quot;/topics&quot; component={Topics} /&gt;
-                     &lt;Route path=&quot;/jobs&quot; component={Jobs} /&gt;
-                     &lt;Route path=&quot;/remote&quot; component={Remote} /&gt;
-                  &lt;/div&gt;
-
-             &lt;/div&gt; 
-         )  
-
-    }
-
-}
-</code></pre></route>
+        <h2 id="Action"><a href="#Action" class="headerlink" title="Action"></a>Action</h2><ul>
+<li>是行为的抽象</li>
+<li>是普通的JS对象</li>
+</ul>
+<ul>
+<li>一般由方法生成</li>
+<li>必须有一个type<h2 id="Reducer"><a href="#Reducer" class="headerlink" title="Reducer"></a>Reducer</h2></li>
+</ul>
+<p>reducer是一个纯函数，接收旧的state和action，返回新的state</p>
+<h2 id="Store"><a href="#Store" class="headerlink" title="Store"></a>Store</h2>
       
     </div>
     
@@ -416,12 +343,6 @@ class App extends React.Component {
 
     <footer class="post-footer">
       
-        <div class="post-tags">
-          
-            <a href="/tags/react-router/" rel="tag"># react-router</a>
-          
-        </div>
-      
 
       
       
@@ -431,8 +352,8 @@ class App extends React.Component {
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/09/10/hexo-asset-image使用方法/" rel="next" title="hexo-asset-image使用方法">
-                <i class="fa fa-chevron-left"></i> hexo-asset-image使用方法
+              <a href="/2018/09/10/react-routerv4版本丢弃IndexRoute/" rel="next" title="react-routerv4 版本丢弃IndexRoute">
+                <i class="fa fa-chevron-left"></i> react-routerv4 版本丢弃IndexRoute
               </a>
             
           </div>
@@ -441,8 +362,8 @@ class App extends React.Component {
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/09/12/redux基础/" rel="prev" title="">
-                 <i class="fa fa-chevron-right"></i>
+              <a href="/2018/09/27/react state初始化问题/" rel="prev" title="react state初始化问题">
+                react state初始化问题 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -582,7 +503,7 @@ class App extends React.Component {
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#背景"><span class="nav-number">1.</span> <span class="nav-text">背景</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#需求样式"><span class="nav-number">2.</span> <span class="nav-text">需求样式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#项目相关依赖版本"><span class="nav-number">3.</span> <span class="nav-text">项目相关依赖版本</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#浏览器报错"><span class="nav-number">4.</span> <span class="nav-text">浏览器报错</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#新老方式代码差别"><span class="nav-number">5.</span> <span class="nav-text">新老方式代码差别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#解释"><span class="nav-number">6.</span> <span class="nav-text">解释</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Action"><span class="nav-number">1.</span> <span class="nav-text">Action</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Reducer"><span class="nav-number">2.</span> <span class="nav-text">Reducer</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Store"><span class="nav-number">3.</span> <span class="nav-text">Store</span></a></li></ol></div>
             
 
           </div>
